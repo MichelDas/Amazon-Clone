@@ -1,0 +1,19 @@
+- Set up React app using create-react-app 
+    - npx create-react-app amazon-clone
+- Set up Firebase
+    - usually this is done as of the given instructions in the Firebase console
+
+- Set up React Router
+  - npm install react-router-com
+  Notes the Switch keyword is changed by routes in react-router-dom 6 
+  so use it accordingly with the tutorial on their site 
+- Build the nav bar ( header )
+    command rfce for functional component creation
+- Build the banner
+- Build The product component
+- Introduce React Context API
+- Setup ADD to Basket Button
+- Build Checkout page
+- Build Subtotal Component
+- Build Login Page
+- Deploy the App Live on Firebase 
