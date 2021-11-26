@@ -2,43 +2,48 @@ import React from 'react'
 import './Header.css'
 import {Link} from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { useStateValue } from './StateProvider';
+
 function Header() {
+    const[{basket}, dispatch] = useStateValue();
+
+    console.log(basket)
     return (
         <div className="header">
-
-            {/* Logo on the top left img */}
             <Link to="/">
                 <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG25.png"
                     alt="Logo"/>
             </Link>
 
-            {/* Search bar */}
             <div className="header__search">
                 <input type="text" className="header__searchInput"/>
                 <SearchIcon className="header__searchIcon" />
             </div>
 
-            {/* 3 Links at right */}
-            <div className="Header__nav">
-                {/* 1st link */}
+            <div className="header__nav">
                 <Link to="" className="header__link">
                     <div className="header__option">
-                        <span>Hello Michel</span>
-                        <span>Sign In</span>
+                        <span className="header_optionLineOne">Hello Michel</span>
+                        <span className="header_optionLineTwo">Sign In</span>
                     </div>
                 </Link>
-                {/* 2nd link */}
                 <Link to="" className="header__link">
                     <div className="header__option">
-                        <span>Returns</span>
-                        <span>& Orders</span>
+                        <span className="header_optionLineOne">Returns</span>
+                        <span className="header_optionLineTwo">& Orders</span>
                     </div>
                 </Link>
-                {/* 3rd link */}
                 <Link to="" className="header__link">
                     <div className="header__option">
-                        <span>Your</span>
-                        <span>Prime</span>
+                        <span className="header_optionLineOne">Your</span>
+                        <span className="header_optionLineTwo">Prime</span>
+                    </div>
+                </Link>
+                <Link to="/checkout" className="header__link">
+                    <div className="header__optionBasket">
+                        <ShoppingBasketIcon/>
+                        <span className="header_optionLineTwo header__basketCount">{basket?.length}</span>
                     </div>
                 </Link>
             </div>
